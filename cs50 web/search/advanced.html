@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <a href="index.html" id="link1">Google Search</a>
+            <a href="image.html" id="link2">Images</a>
+        </div>
+        <form action="https://www.google.com/search?q=&as_q=&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&tbs=&as_filetype=&as_rights=" id="advancedForm" style="width: 40%; margin: 0 auto;">
+            <div style="display: flex; flex-direction: column;">
+
+                <div class="Adiv">
+                    <label for="all-words" class="Alablel">All these words:</label>
+                    <input class="long-input" type="text" name="as_q">
+                </div>
+
+                <div class="Adiv">
+                    <label for="exact-phrase" class="Alablel">This exact word or phrase:</label>
+                    <input class="long-input" type="text" name="as_epq">
+                </div>
+
+                <div class="Adiv">
+                    <label for="any-words" class="Alablel">Any of these words:</label>
+                    <input class="long-input" type="text" name="as_oq">
+                </div>
+
+                <div class="Adiv">
+                    <label for="none-words" class="Alablel">None of these words:</label>
+                    <input class="long-input" type="text" name="as_eq">
+                </div>
+
+                <div style="display: flex; justify-content: center; position: relative; left: 180px; top: 10px;">
+                    <input type="submit" value="Advanced Search">
+                </div>
+
+            </div>
+        </form>
+    </body>
+</html>

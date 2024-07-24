@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    search-{{ search_entry }}
+{% endblock %}
+
+{% block body %}
+    <h3>results for {{ search_entry }}</h3>
+    <ul>
+        {% for i in substrings %}
+                <li><a href="wiki/{{ i }}">{{ i }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

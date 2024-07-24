@@ -1,0 +1,15 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+body p {
+  margin-bottom: 1.5em;
+}
+body a {
+  color: blue;
+}
+body a:hover {
+  color: black;
+}
+
+/*# sourceMappingURL=layout.css.map */

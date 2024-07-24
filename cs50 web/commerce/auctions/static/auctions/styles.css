@@ -1,0 +1,84 @@
+body {
+    padding: 10px;
+}
+
+/* Style the form container */
+form {
+    margin-top: 20px;
+  }
+
+  /* Style form labels */
+  .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  /* Style form input fields */
+  input[type="text"],
+  textarea {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  /* Style form select dropdown */
+  select {
+    width: 318px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  /* Style form submit button */
+  button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Additional styling for a nice layout */
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .form-row label {
+    flex-basis: 120px;
+  }
+
+
+  .error {
+    color: red;
+    /* padding: 5px; */
+    border: 19px;
+  }
+
+  .listing-description {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 2px;
+}
+
+
+

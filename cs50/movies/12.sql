@@ -1,0 +1,2 @@
+SELECT movies.title FROM movies JOIN stars ON movies.id = stars.movie_id JOIN people ON stars.person_id = people.id WHERE name IN (SELECT name FROM people WHERE name = 'Johnny Depp' OR name =
+'Helena Bonham Carter') GROUP BY movies.title HAVING COUNT(DISTINCT name) = 2;

@@ -1,0 +1,3 @@
+# CS50 Web 
+
+CS50 Web is an extension of Harvard University's CS50 course, focusing on web development. It covers front-end and back-end technologies like [HTML](/wiki/HTML), [CSS](/wiki/CSS), JavaScript, [Python](/wiki/Python), SQL, Flask, and [Django](/wiki/Django). Through hands-on projects, students gain practical experience in building dynamic web applications, learning essential concepts for creating modern websites.

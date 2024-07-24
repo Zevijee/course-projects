@@ -1,0 +1,54 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+    <div id="full-create-post">
+        <div id="create-post">
+            <h4>New Post</h4>
+            <form action="{% url 'create_post' %}" method="POST">
+                {% csrf_token %}
+                <textarea id="new-post-text" rows="2" name="post_text"></textarea>
+                <input type="submit" class="btn btn-primary" value="Post">
+            </form>
+        </div>
+        <br>
+    </div>
+    {% endif %}
+    <div id="view-profile">
+        <label style="display: none" id="userId"> {{ request.user.id }} </label>
+        <h1 id="username"></h1>
+            <button class="btn btn-primary" id="follow-btn">Follow</button>
+        <p>
+            Followers: <span id="followers"></span>
+            Following: <span id="following-amount"></span>
+        </p>
+        <hr>
+    </div>
+    <div id="following-header">
+        <h4>The posts your following will appear here.</h4>
+        <br>
+    </div>
+    <div id="previous">
+        <button class="btn btn-primary">previous</button>
+        <br>
+        <br>
+    </div>
+    <div id="view-posts">
+    </div>
+    <button id="next" class="btn btn-primary">next</button>
+    <div id="edit-post">
+        <strong id="edit-poster"></strong>
+        <form id="edit-form">
+            {% csrf_token %}
+            <textarea id="edit-post-text" rows="2" name="edit_text"></textarea>
+            <input type="submit" class="btn btn-primary" value="Save" id="save-edit">
+        </form>
+        <h4 id="edit-timestamp"></h4>
+        <span class="hearts">&hearts;</span><h4 id="edit-likes"></h4>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}

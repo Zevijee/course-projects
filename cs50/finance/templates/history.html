@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table>
+    <tr>
+        <th>&nbspTransaction Type&nbsp;</th>
+        <th>&nbspStock Name&nbsp;</th>
+        <th>&nbspAmount Of Shares&nbsp;</th>
+        <th>&nbspTime Of Transaction&nbsp;</th>
+        <th>&nbspPrice At Time Of Transaction&nbsp;</th>
+    </tr>
+    {% for row in logs %}
+        <tr>
+            <td>&nbsp&nbsp{{ row.log_transaction }}&nbsp</td>
+            <td>&nbsp{{ row.stock_name }}&nbsp</td>
+            <td>&nbsp{{ row.shares }}&nbsp</td>
+            <td>&nbsp{{ row.created_at }}&nbsp</td>
+            <td>&nbsp{{ row.transaction_price }}&nbsp</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

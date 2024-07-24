@@ -1,0 +1,27 @@
+{% extends "task_manager/layout.html" %}
+{% load static %}
+
+{% block title %}See past days lists.{% endblock %}
+
+{% block body %}
+    <input type="hidden" id="date" value="{{ date }}">
+    <meta id="passed-list" name="passed-identifier">
+    <h3>This is the list for {{ date }}</h3>
+    <a class="btn btn-primary" href="{% url 'index' %}">Home</a>
+    <input style="display: none" type="date" id="datepicker">
+    <br>
+    <br>
+    <button id="see-past-list" class="btn btn-sm btn-outline-primary">See A different list.</button>
+    <br>
+    <hr>
+
+    <div id="todays-tasks">
+
+    </div>
+
+    <a class="btn btn-primary" href="{% url 'logout' %}">logout</a>
+{% endblock %}
+
+{% block script %}
+    <script type="module" src="{% static 'task_manager/index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,54 @@
+/* for the body */
+.body {
+    padding: 20px;
+}
+
+/* for the create-post div */
+#create-post, #edit-post {
+    border: 1px solid #CCCCCC;
+    padding: 25px;
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+/* for the textarea in the create_post form */
+#new-post-text, #edit-post-text {
+    width: 100%;
+}
+
+/* for the hearts */
+.hearts {
+    color: red;
+    font-size: 30px;
+}
+
+/* for the post div */
+.post-div {
+    border: 1px solid #CCCCCC;
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+/* for the profile button */
+.profile-button {
+    color: black;
+    font-size: 28px;
+}
+
+/* for the view profile  */
+#view-profile {
+    font-size: 24px;
+}
+
+#edit-poster {
+    font-size: 28px;
+}
+
+#edit-likes {
+    display: inline;
+}
+
+.transparent-heart {
+    opacity: 0.3; /* Set the desired opacity value */
+  }

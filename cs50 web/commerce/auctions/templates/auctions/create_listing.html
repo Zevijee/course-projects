@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Auctions{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h2>Create A Listing</h2>
+
+    {% if message %}
+        <strong class="error">{{ message }}</strong>
+    {% endif %}
+
+    <div>
+        Signed in as <strong>{{ user.username }}</strong>.
+    </div>
+    <br>
+    <h6>The description of this page should be written in markdown</h6>
+
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Markdown?</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Cancel</a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <form action="{% url 'create_listing' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.title.id_for_label }}" class="form-label">Title</label>
+            <div>
+                {{ form.title }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}" class="form-label">Description</label>
+            <div>
+                {{ form.description }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{ form.starting_bid.id_for_label }}" class="form-label">Starting Bid</label>
+            <div>
+                {{ form.current_price }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{ form.category.id_for_label }}" class="form-label">Category</label>
+            <div>
+                {{ form.category }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{ form.picture.id_for_label }}" class="form-label">Picture</label>
+            <div>
+                {{ form.picture }}
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create Listing</button>
+        </div>
+    </form>
+</body>
+</html>

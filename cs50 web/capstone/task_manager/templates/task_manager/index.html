@@ -1,0 +1,59 @@
+{% extends "task_manager/layout.html" %}
+{% load static %}
+
+{% block title %}index{% endblock %}
+
+{% block body %}
+    <meta id="indexIdentifier" name="index-identifier">
+    <div class="main-panel">
+        <h2>Good <span id="time-of-day"></span>, {{ request.user.username }}.</h2>
+        <h4 id="date"></h4>
+        <h5 id="mantra"></h5>
+        <span>
+            <button id="see-past-list" class="btn btn-sm btn-outline-primary">See A past days list.</button>
+            <button id="create-a-future-list" class="btn btn-sm btn-outline-primary">Create A List for another day!</button>
+        </span>
+        <input style="display: none" type="date" id="datepicker-future">
+        <input style="display: none" type="date" id="datepicker-past">
+        <hr>
+        <div id="create-task-div" class="form-group">
+            <h4>Create a new task for today!</h4>
+            <form id="new_task">
+                {% csrf_token %}
+                <textarea class="form-control" placeholder="task" name="task" rows="1"></textarea>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Time</h5>
+                        <input type="time" id="time-input" name="time" step="60">
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Urgency</h5>
+                        <select name="urgency">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                          <a>
+                    </div>
+                </div>
+                <br>
+                <input class="btn btn-primary" type="submit" value="Create">
+            </form>
+        </div>
+        <div>
+            <h2>Todays Tasks.</h2>
+            <div id="todays-tasks">
+            </div>
+        </div>
+
+    </div>
+
+    <a class="btn btn-primary" href="{% url 'logout' %}">logout</a>
+
+{% endblock %}
+
+{% block script %}
+    <script type="module" src="{% static 'task_manager/index.js' %}"></script>
+{% endblock %}

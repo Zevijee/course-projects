@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function b1_pressed() {
+                document.getElementById("q1o").innerHTML = "Incorrect";
+                document.getElementById("b1").style.backgroundColor = "red";
+            }
+
+            function b2_pressed() {
+                document.getElementById("q1o").innerHTML = "Incorrect";
+                document.getElementById("b2").style.backgroundColor = "red";
+            }
+
+            function b3_pressed() {
+                document.getElementById("q1o").innerHTML = "Correct!";
+                document.getElementById("b3").style.backgroundColor = "green";
+            }
+
+            function b5_pressed() {
+                document.getElementById("q1o").innerHTML = "Incorrect";
+                document.getElementById("b5").style.backgroundColor = "red";
+            }
+
+            function b4_pressed(){
+                input = document.getElementById("input").value
+                if (input == 'Shrek')
+                {
+                    document.getElementById("q2o").innerHTML = "Correct!";
+                    document.getElementById("input").style.backgroundColor = "green";
+                }
+                else
+                {
+                    document.getElementById("q2o").innerHTML = "Incorrect";
+                    document.getElementById("input").style.backgroundColor = "red";
+                }
+            }
+
+            document.getElementById("b1").addEventListener("click", b1_pressed);
+            document.getElementById("b2").addEventListener("click", b2_pressed);
+            document.getElementById("b3").addEventListener("click", b3_pressed);
+            document.getElementById("b4").addEventListener("click", b4_pressed);
+            document.getElementById("b5").addEventListener("click", b5_pressed);
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    What is the difference between a duck?
+                </h3>
+                <h3 id="q1o"></h3>
+                <button class="button" id="b1" onclick="b1_pressed()">New York City</button>
+                <button class="button" id="b2" onclick="b2_pressed()">The man in the moon</button>
+                <button class="button" id="b3" onclick="b3_pressed()">Because one of its legs are the same</button>
+                <button class="button" id="b5" onclick="b5_pressed()">bilbo baggins from the hobit</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>
+                    What is the name of the oger from Shrek?
+                </h3>
+                <h3 id="q2o"></h3>
+                <input class="input" id="input">
+                <button class="button" id="b4" onclick="b4_pressed()">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>

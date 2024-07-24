@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Get Quote
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3 margin-10px">
+        <h2>
+            Hello {{ name }} below is a input field where you can get stock quotes.
+        </h2>
+    </div>
+    <div class="mb-3">
+        <form action="/quote" method="post">
+            <div class="mb-3">
+                <input  autocomplete="off" autofocus class="form-control mx-auto w-auto" type="text" name="symbol" placeholder="symbal">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" id="submitBtn" type="submit">Get A quote</button>
+            </div>
+       </form>
+    <div class="stock">
+        <span class="stock-name">{{ stock_name }}</span>
+        <span class="stock-price">{{ stock_price }}</span>
+    </div>
+    </div>
+{% endblock %}

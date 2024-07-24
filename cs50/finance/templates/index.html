@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+    <div style=>
+        <h1>Stock Information</h1>
+        <br>
+        <br>
+        <h6>Total value of all stocks owned: {{ total_value }}</h6>
+        <br>
+        <h6>Available funds: {{ available_cash }}</h6>
+        <h2>
+            {{ transaction }}
+        </h2>
+    </div>
+    <table>
+    <tr>
+        <th>&nbspName&nbsp;</th>
+        <th>&nbspShares Owned&nbsp;</th>
+        <th>&nbspPrice&nbsp;</th>
+        <th>&nbspValue&nbsp;</th>
+    </tr>
+    {% for row in users_stocks %}
+        <tr>
+            <td>&nbsp&nbsp{{ row.stock_name }}&nbsp</td>
+            <td>&nbsp{{ row.shares_owned }}&nbsp</td>
+            <td>&nbsp{{ row.price }}&nbsp</td>
+            <td>&nbsp{{ row.value }}&nbsp</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
